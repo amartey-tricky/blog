@@ -18,7 +18,6 @@ import { BlogPostSchema } from "@/util/validation/blog"
 interface BlogPostWithId extends BlogPost {
   id?: number
   slug?: string
-  createdAt?: Date
   updatedAt?: Date
 }
 
