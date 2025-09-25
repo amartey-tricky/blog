@@ -11,7 +11,7 @@ export type BlogPost = typeof BlogPostSchema.t
 
 export const BlogStatusSchema = type({
   id: "number",
-  name: "'draft' | 'published' | 'archived'",
+  name: "string",
 })
 
 export type BlogStatus = typeof BlogStatusSchema.t
