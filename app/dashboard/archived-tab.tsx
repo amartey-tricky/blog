@@ -65,6 +65,7 @@ export function ArchivedTab() {
         title: post.title,
         content: post.content,
         statusId: draftStatus.id,
+        createdAt: post.createdAt,
       })
 
       toast.success("Post restored to drafts")
