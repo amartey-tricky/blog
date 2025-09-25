@@ -4,13 +4,12 @@ import { getBlogPostBySlug } from "@/app/actions"
 import { DisplayPost } from "./blogpost"
 
 interface BlogPostPageProps {
-  params: {
-    slug: string
-  }
+  params: Promise<{ slug: string }>
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getBlogPostBySlug(params.slug)
+  const { slug } = await params
+  const post = await getBlogPostBySlug(slug)
 
   if (!post) {
     notFound()
