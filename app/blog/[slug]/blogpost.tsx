@@ -3,6 +3,7 @@
 import { motion } from "motion/react"
 import { RichTextDisplay } from "@/components/dashboard/tiptap"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { BlogPost } from "@/util/validation/blog"
 
 const parentTransition = {
   hidden: { opacity: 0, y: 100 },
@@ -25,7 +26,7 @@ export function DisplayPost({ post, className = "" }: DisplayPostProps) {
         <CardHeader className="pb-6 space-y-4">
           <CardTitle className="text-3xl md:text-4xl font-bold text-foreground text-balance">{post.title}</CardTitle>
           <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-            <time dateTime={post.createdAt.toISOString()}>
+            <time dateTime={post.createdAt}>
               Published on{" "}
               {new Date(post.createdAt).toLocaleDateString("en-US", {
                 year: "numeric",
