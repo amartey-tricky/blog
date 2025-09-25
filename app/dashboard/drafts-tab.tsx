@@ -113,6 +113,7 @@ export function DraftsTab() {
         title: post.title,
         content: post.content,
         statusId: publishedStatus.id,
+        createdAt: post.createdAt,
       })
       toast.success("Draft published successfully")
       await fetchData()
