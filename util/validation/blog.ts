@@ -24,7 +24,7 @@ export const ImageSchema = type({
   size: "number",
   type: "string",
   createdAt: "Date",
-  updatedAt: "string",
+  updatedAt: "Date",
 })
 
 export type ImageData = typeof ImageSchema.t
