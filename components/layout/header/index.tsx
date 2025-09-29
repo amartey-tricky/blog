@@ -19,7 +19,6 @@ export function Header() {
     { name: "Books", href: "/books" },
     { name: "Blog", href: "/blog" },
     { name: "Gallery", href: "/gallery" },
-    { name: "Speaking", href: "/speaking" },
     { name: "Contact", href: "/contact" },
   ]
 
