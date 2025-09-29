@@ -3,6 +3,7 @@
 import { motion } from "motion/react"
 import Image from "next/image"
 import Link from "next/link"
+import { useState, useEffect } from "react"
 import {
   FaArrowRight,
   FaAward,
@@ -15,8 +16,63 @@ import {
   FaUsers,
 } from "react-icons/fa6"
 import Hero from "@/components/layout/hero"
+import { getPublishedPosts } from "./actions"
+
+// Helper functions
+function htmlToText(html: string): string {
+  const text = html.replace(/<[^>]*>/g, " ")
+  return text.replace(/\s+/g, " ").trim()
+}
+
+function createExcerpt(content: string, maxLength: number = 150): string {
+  const text = htmlToText(content)
+  if (text.length <= maxLength) return text
+
+  const truncated = text.substring(0, maxLength)
+  const lastSpace = truncated.lastIndexOf(" ")
+
+  if (lastSpace > maxLength * 0.8) {
+    return `${text.substring(0, lastSpace)}...`
+  }
+
+  return `${truncated}...`
+}
+
+// Define the type for a blog post
+type BlogPost = {
+  id: number
+  title: string
+  content: string
+  slug: string
+  createdAt: Date
+  updatedAt: Date
+}
 
 export default function HomePage() {
+  // State for storing blog posts
+  const [posts, setPosts] = useState<BlogPost[]>([])
+  const [loading, setLoading] = useState(true)
+
+  // Fetch published posts on component mount
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const postData = await getPublishedPosts()
+
+        // latest 5 posts
+        const latestPosts = postData.slice(0, 5)
+
+        setPosts(latestPosts)
+      } catch (error) {
+        console.error("Error fetching posts:", error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchPosts()
+  }, [])
+
   const _containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -200,10 +256,85 @@ export default function HomePage() {
         </div>
       </motion.section>
 
+      {/* Latest Stories Preview */}
+      <motion.section
+        className="py-20 px-6 bg-white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[var(--color-brand-text)] mb-4">Latest Stories</h2>
+            <p className="text-xl text-[var(--color-brand-muted)] max-w-3xl mx-auto">
+              Insights, reflections, and stories from my journey
+            </p>
+          </div>
+
+          {loading ? (
+            <div className="flex justify-center items-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[var(--color-brand-accent)]"></div>
+            </div>
+          ) : posts.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {posts.map((post, index) => (
+                <motion.div
+                  key={post.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-[color-mix(in_srgb,var(--color-brand-bg),var(--color-brand-muted),10%)] rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="p-6">
+                    <div className="flex items-center text-sm text-[var(--color-brand-muted)] mb-3">
+                      <FaCalendarDay className="mr-2" />
+                      {new Date(post.createdAt).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </div>
+                    <h3 className="text-xl font-bold text-[var(--color-brand-text)] mb-3">{post.title}</h3>
+                    <p className="text-[var(--color-brand-muted)] mb-6 leading-relaxed">
+                      {createExcerpt(post.content)}
+                    </p>
+                    <Link href={`/blog/${post.slug}`}>
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-[var(--color-brand-accent)] hover:text-[color-mix(in_srgb,var(--color-brand-accent),black,10%)] font-semibold inline-flex items-center gap-2 transition-colors">
+                        Read More
+                        <FaArrowRight size={16} />
+                      </motion.button>
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-[var(--color-brand-muted)]">No stories published yet. Check back soon!</p>
+            </div>
+          )}
+
+          <div className="text-center">
+            <Link href="/blog">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[var(--color-brand-accent)] hover:bg-[color-mix(in_srgb,var(--color-brand-accent),black,10%)] text-white px-8 py-4 rounded-lg font-semibold inline-flex items-center gap-2 transition-colors hover:text-brand-accent borber-b">
+                <FaBookOpen size={20} />
+                View All Stories
+              </motion.button>
+            </Link>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Speaking Preview */}
 
       <motion.section
-        className="py-20 px-6 bg-white"
+        className="py-20 px-6 bg-[color-mix(in_srgb,var(--color-brand-bg),var(--color-brand-muted),10%)]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -265,8 +396,6 @@ export default function HomePage() {
           </div>
         </div>
       </motion.section>
-
-      {/* Latest Stories Preview */}
 
       {/* CTA Section */}
       <motion.section
