@@ -8,6 +8,7 @@ export const ourFileRouter = {
   imageUploader: uploadThing({
     image: {
       maxFileSize: "4MB",
+      maxFileCount: 15,
     },
   }).onUploadComplete(async ({ metadata, file }) => {
     await db.insert(images).values({
