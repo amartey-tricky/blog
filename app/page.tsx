@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "motion/react"
-import Hero from "@/components/layout/hero"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -15,9 +14,10 @@ import {
   FaStar,
   FaUsers,
 } from "react-icons/fa6"
+import Hero from "@/components/layout/hero"
 
 export default function HomePage() {
-  const containerVariants = {
+  const _containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -27,7 +27,7 @@ export default function HomePage() {
     },
   }
 
-  const itemVariants = {
+  const _itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   }
@@ -55,7 +55,7 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[var(--color-brand-bg)]">
+    <div className="bg-[var(--color-brand-bg)]">
       {/* Hero Section */}
       <Hero />
 

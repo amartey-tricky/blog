@@ -12,7 +12,7 @@ import type { ImageData } from "@/util/validation/blog"
 export function GalleryTab() {
   const [images, setImages] = useState<ImageData[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const [_error, setError] = useState<string | null>(null)
 
   const fetchData = useCallback(async () => {
     try {
@@ -110,7 +110,7 @@ export function GalleryTab() {
     try {
       const dateObj = typeof date === "string" ? new Date(date) : date
 
-      if (isNaN(dateObj.getTime())) {
+      if (Number.isNaN(dateObj.getTime())) {
         return "Invalid date"
       }
 
@@ -189,7 +189,7 @@ export function GalleryTab() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    onError={(e) => {
+                    onError={(_e) => {
                       console.error("Image failed to load:", image.url)
                       // You could set a placeholder here
                     }}

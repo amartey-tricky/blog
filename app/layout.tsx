@@ -5,9 +5,9 @@ import { connection } from "next/server"
 import { Suspense } from "react"
 import { Toaster } from "sonner"
 import { extractRouterConfig } from "uploadthing/server"
-import { ourFileRouter } from "./api/uploadthing/core"
-import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { Header } from "@/components/layout/header"
+import { ourFileRouter } from "./api/uploadthing/core"
 import "./globals.css"
 
 const geistSans = Geist({

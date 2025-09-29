@@ -1,11 +1,11 @@
 "use client"
 
 import { arktypeResolver } from "@hookform/resolvers/arktype"
+import { type } from "arktype"
 import { BookOpen, Coffee, Mail, MapPin, PenTool, Phone, Send } from "lucide-react"
 import { motion } from "motion/react"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
-import { type } from "arktype"
 
 // Contact form validation schema
 const contactSchema = type({
