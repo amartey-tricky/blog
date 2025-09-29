@@ -74,7 +74,6 @@ export function Header() {
                   className="font-medium transition-colors relative group hover:scale-105 inline-block"
                   style={{
                     color: "#143d29",
-                    "--hover-color": "#1a5f3f",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.color = "#1a5f3f"
