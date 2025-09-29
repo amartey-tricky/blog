@@ -18,6 +18,7 @@ import { BlogPostSchema } from "@/util/validation/blog"
 interface BlogPostWithId extends BlogPost {
   id?: number
   slug?: string
+  createdAt?: Date
   updatedAt?: Date
 }
 
@@ -29,6 +30,7 @@ interface BlogFormPostProps {
 
 export default function BlogFormPost({ initialData, onSuccess, onCancel }: BlogFormPostProps) {
   const [statuses, setStatuses] = useState<BlogStatus[]>([])
+  const [isMounted, setIsMounted] = useState(false)
 
   const {
     register,
@@ -48,6 +50,8 @@ export default function BlogFormPost({ initialData, onSuccess, onCancel }: BlogF
   })
 
   useEffect(() => {
+    setIsMounted(true)
+
     async function fetchStatuses() {
       try {
         const result = await getBlogStatus()
@@ -58,6 +62,9 @@ export default function BlogFormPost({ initialData, onSuccess, onCancel }: BlogF
           const draftStatus = result.find((s) => s.name === "draft")
           if (draftStatus) {
             setValue("statusId", draftStatus.id)
+          } else if (result.length > 0) {
+            // If no draft status, use the first available status
+            setValue("statusId", result[0].id)
           }
         }
       } catch (error) {
@@ -65,23 +72,24 @@ export default function BlogFormPost({ initialData, onSuccess, onCancel }: BlogF
         toast.error("Failed to load statuses")
       }
     }
+
     fetchStatuses()
   }, [initialData, setValue])
 
   // Update form when initialData changes
   useEffect(() => {
-    if (initialData) {
+    if (initialData && isMounted) {
       setValue("title", initialData.title)
       setValue("content", initialData.content)
       setValue("statusId", initialData.statusId)
-    } else {
+    } else if (isMounted) {
       reset({
         title: "",
         content: "",
-        statusId: 0,
+        statusId: statuses.length > 0 ? statuses[0].id : 0,
       })
     }
-  }, [initialData, setValue, reset])
+  }, [initialData, setValue, reset, statuses, isMounted])
 
   const onSubmit = async (data: BlogPost) => {
     try {
@@ -109,6 +117,9 @@ export default function BlogFormPost({ initialData, onSuccess, onCancel }: BlogF
 
   const currentStatusId = watch("statusId")
   const currentContent = watch("content")
+
+  // Debugging - log form state
+  console.log("Form state:", { currentStatusId, errors, isSubmitting })
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -203,7 +214,7 @@ export default function BlogFormPost({ initialData, onSuccess, onCancel }: BlogF
           )}
           <Button
             type="submit"
-            disabled={isSubmitting || currentStatusId === 0}
+            disabled={isSubmitting || currentStatusId === 0 || statuses.length === 0}
             className="bg-primary text-primary-foreground hover:bg-primary/90 px-6">
             {isSubmitting ? "Saving..." : initialData ? "Update Post" : "Create Post"}
           </Button>

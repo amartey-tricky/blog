@@ -4,7 +4,7 @@ export const BlogPostSchema = type({
   title: "string",
   content: "string",
   statusId: "number",
-  createdAt: "Date",
+  // createdAt: "Date",
 })
 
 export type BlogPost = typeof BlogPostSchema.t
