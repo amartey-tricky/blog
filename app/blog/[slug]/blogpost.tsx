@@ -3,11 +3,21 @@
 import { motion } from "motion/react"
 import { RichTextDisplay } from "@/components/dashboard/tiptap"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import type { BlogPost } from "@/util/validation/blog"
+// import type { BlogPost } from "@/util/validation/blog"
 
 const parentTransition = {
   hidden: { opacity: 0, y: 100 },
   visible: { opacity: 1, y: 0, transition: { duration: 2.0 } },
+}
+
+interface BlogPost {
+  id: number
+  title: string
+  content: string
+  statusId: number
+  slug: string
+  createdAt: Date
+  updatedAt: Date
 }
 
 interface DisplayPostProps {
