@@ -4,9 +4,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { AnalyticsTab } from "./analytics-tab"
 import { ArchivedTab } from "./archived-tab"
 import { DraftsTab } from "./drafts-tab"
+import { GalleryTab } from "./gallery-tab"
 import { PostsTab } from "./posts-tab"
 import { UploadTab } from "./upload-tab"
-import { GalleryTab } from "./gallery-tab"
 
 export default function Dashboard() {
   return (

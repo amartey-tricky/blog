@@ -17,12 +17,13 @@ export const BlogStatusSchema = type({
 export type BlogStatus = typeof BlogStatusSchema.t
 
 export const ImageSchema = type({
+  id: "number",
   name: "string",
   url: "string",
   key: "string",
   size: "number",
   type: "string",
-  createdAt: "string",
+  createdAt: "Date",
   updatedAt: "string",
 })
 

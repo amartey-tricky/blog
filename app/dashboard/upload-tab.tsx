@@ -1,10 +1,10 @@
 "use client"
 
-import { UploadButton, UploadDropzone } from "@/util/uploadthing"
-import { toast } from "sonner"
-import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card"
+import { AlertCircle, CheckCircle2, FileImage, Upload } from "lucide-react"
 import { useState } from "react"
-import { Upload, FileImage, CheckCircle2, AlertCircle } from "lucide-react"
+import { toast } from "sonner"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { UploadButton, UploadDropzone } from "@/util/uploadthing"
 
 interface UploadedFile {
   key: string
@@ -50,7 +50,7 @@ export function UploadTab() {
     const k = 1024
     const sizes = ["Bytes", "KB", "MB", "GB"]
     const i = Math.floor(Math.log(bytes) / Math.log(k))
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i]
+    return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`
   }
 
   return (

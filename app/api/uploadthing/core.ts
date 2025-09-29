@@ -17,7 +17,7 @@ export const ourFileRouter = {
       size: file.size,
       type: file.type,
       createdAt: new Date(),
-      updatedAt: file.lastModified ? new Date(file.lastModified) : new Date()
+      updatedAt: file.lastModified ? new Date(file.lastModified) : new Date(),
     })
     console.log("File URL: ", file.ufsUrl)
     return { UploadComplete: file.name }

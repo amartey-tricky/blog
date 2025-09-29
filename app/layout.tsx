@@ -1,11 +1,11 @@
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import { Toaster } from "sonner"
-import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin"
-import { extractRouterConfig } from "uploadthing/server"
-import { ourFileRouter } from "./api/uploadthing/core"
 import { connection } from "next/server"
 import { Suspense } from "react"
+import { Toaster } from "sonner"
+import { extractRouterConfig } from "uploadthing/server"
+import { ourFileRouter } from "./api/uploadthing/core"
 import "./globals.css"
 
 const geistSans = Geist({

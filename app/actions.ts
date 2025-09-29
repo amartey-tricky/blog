@@ -17,6 +17,17 @@ export async function getImages() {
   }
 }
 
+export async function deleteImage(id: number) {
+  try {
+    await db.delete(images).where(eq(images.id, id))
+
+    return { success: true }
+  } catch (error) {
+    console.error("Error deleting image: ", error)
+    throw new Error("Error deleting image")
+  }
+}
+
 export async function generateUniqueSlug(title: string, excludeId?: number): Promise<string> {
   const baseSlug = Slugify(title)
   let slug = baseSlug
@@ -25,10 +36,10 @@ export async function generateUniqueSlug(title: string, excludeId?: number): Pro
   while (true) {
     const existingPost = excludeId
       ? await db
-        .select({ id: blogPost.id })
-        .from(blogPost)
-        .where(eq(blogPost.slug, slug))
-        .then((results) => results.filter((post) => post.id !== excludeId))
+          .select({ id: blogPost.id })
+          .from(blogPost)
+          .where(eq(blogPost.slug, slug))
+          .then((results) => results.filter((post) => post.id !== excludeId))
       : await db.select({ id: blogPost.id }).from(blogPost).where(eq(blogPost.slug, slug))
 
     if (existingPost.length === 0) {
