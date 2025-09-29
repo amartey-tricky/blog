@@ -6,6 +6,8 @@ import { Suspense } from "react"
 import { Toaster } from "sonner"
 import { extractRouterConfig } from "uploadthing/server"
 import { ourFileRouter } from "./api/uploadthing/core"
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -37,11 +39,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <main className="min-h-screen bg-brand-bg">
+        <main className="min-h-[calc(100vh-601px)] bg-brand-bg my-auto pt-16">
+          <Header />
           <Suspense>
             <UTSSR />
           </Suspense>
           {children}
+          <Footer />
           <Toaster richColors />
         </main>
       </body>
