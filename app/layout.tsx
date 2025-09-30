@@ -1,13 +1,17 @@
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
+import dynamic from "next/dynamic"
 import { Suspense } from "react"
-import { Toaster } from "sonner"
 import { extractRouterConfig } from "uploadthing/server"
 import { Footer } from "@/components/layout/footer"
 import { Header } from "@/components/layout/header"
 import { ourFileRouter } from "./api/uploadthing/core"
 import "./globals.css"
+
+const Toaster = dynamic(() => import("sonner").then((mod) => ({ default: mod.Toaster })), {
+  ssr: false,
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
