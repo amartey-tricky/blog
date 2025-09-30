@@ -1,7 +1,6 @@
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import { connection } from "next/server"
 import { Suspense } from "react"
 import { Toaster } from "sonner"
 import { extractRouterConfig } from "uploadthing/server"
@@ -26,8 +25,6 @@ export const metadata: Metadata = {
 }
 
 async function UTSSR() {
-  await connection()
-
   return <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
 }
 
