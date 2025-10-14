@@ -9,7 +9,7 @@ import { FaBookOpen } from "react-icons/fa6"
 const books = {
   "to-vow-or-not-to-vow": {
     title: "To Vow or Not to Vow",
-    cover: "/books/vow-cover.jpg",
+    cover: "/vow.jpg",
     description: "An insight into how we must keep our dreams private so we don't 'cast our fruit before it's time'.",
     details:
       "This book blends research, personal anecdotes, and Biblical insights into whether it is necessary to make vows",
@@ -17,7 +17,7 @@ const books = {
   },
   "behind-closed-doors": {
     title: "Behind Closed Doors: Guarding Your Dreams",
-    cover: "/books/guarding-dreams.jpg",
+    cover: "/behind.jpg",
     description: "A guide to nurturing unspoken aspirations and overcoming self-doubt.",
     details:
       "Margaret's latest work explores the fact that we must guard our dreams and aspirations private and watch them manifest and 'announce themselves'.",

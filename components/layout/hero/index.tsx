@@ -168,7 +168,7 @@ export default function Hero() {
                 variants={itemVariants}
                 className="text-xl md:text-2xl font-medium"
                 style={{ color: brandColors.muted }}>
-                Bridging Science & Storytelling
+                Author & Minister
               </motion.p>
             </motion.div>
 
@@ -176,8 +176,8 @@ export default function Hero() {
               variants={itemVariants}
               className="text-lg leading-relaxed max-w-2xl text-pretty"
               style={{ color: brandColors.text }}>
-              Clinical research professional turned storyteller, crafting compelling narratives that explore identity,
-              resilience, and cultural duality. Where scientific precision meets human emotion.
+              A minister of the Gospel who bridges faith and real life—exploring identity, resilience, and the beauty of
+              grace where divine truth meets human experience.
             </motion.p>
 
             <motion.div

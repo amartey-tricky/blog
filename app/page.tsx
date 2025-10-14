@@ -92,14 +92,14 @@ export default function HomePage() {
     {
       slug: "to-vow-or-not-to-vow",
       title: "To Vow or Not to Vow",
-      cover: "/books/vow-cover.jpg",
-      description: "A cultural exploration of marriage vows and modern relationships.",
+      cover: "/vow.jpg",
+      description: "Ensuring you are not making vows you cannot keep.",
     },
     {
       slug: "behind-closed-doors",
-      title: "Behind Closed Doors: Guarding Your Dreams",
-      cover: "/books/guarding-dreams.jpg",
-      description: "A guide to nurturing unspoken aspirations and overcoming self-doubt.",
+      title: "Behind Closed Doors",
+      cover: "/behind.jpg",
+      description: "Keeping your dreams and aspirations private until they manifest.",
     },
   ]
 
@@ -155,13 +155,13 @@ export default function HomePage() {
             <div>
               <h2 className="text-4xl font-bold text-[var(--color-brand-text)] mb-6">About Margaret</h2>
               <p className="text-lg text-[var(--color-brand-muted)] mb-6 leading-relaxed">
-                Margaret E. Kuofie is a certified clinical research professional with over a decade of experience in
-                healthcare. Her writing blends scientific rigor with emotional depth, exploring themes of identity,
-                resilience, and cultural duality.
+                Margaret E. Kuofie is a certified clinical research professional with over four decades of experience in
+                healthcare. Her work thoughtfully blends Biblical insight with scientific understanding to explore how
+                faith shapes our approach to health and daily living.
               </p>
               <p className="text-lg text-[var(--color-brand-muted)] mb-8 leading-relaxed">
-                As the author of "To Vow or Not to Vow" and "Behind Closed Doors: Guarding Your Dreams", she empowers
-                readers to embrace their unspoken aspirations and navigate the complexities of modern life.
+                As the author of To Vow or Not to Vow and Behind Closed Doors, she encourages readers to live
+                intentionally, applying Scripture to every aspect of life with clarity and conviction.
               </p>
               <Link href="/about">
                 <motion.button
@@ -180,8 +180,8 @@ export default function HomePage() {
                   size={32}
                 />
                 <blockquote className="text-xl text-[var(--color-brand-text)] italic mb-4">
-                  "Writing is my way of bridging the gap between scientific understanding and human emotion, creating
-                  stories that resonate across cultures and experiences."
+                  “Faith becomes real when we invite God’s Word into the ordinary moments where His truth transforms our
+                  thinking, our health, and our daily walk.”
                 </blockquote>
                 <cite className="text-[var(--color-brand-accent)] font-semibold">— Margaret E. Kuofie</cite>
               </div>
@@ -267,7 +267,7 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[var(--color-brand-text)] mb-4">Latest Stories</h2>
             <p className="text-xl text-[var(--color-brand-muted)] max-w-3xl mx-auto">
-              Insights, reflections, and stories from my journey
+              Reflections and lessons from my walk of faith.
             </p>
           </div>
 

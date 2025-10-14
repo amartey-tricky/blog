@@ -54,7 +54,7 @@ export function Header() {
                 <p
                   className="text-xs -mt-1"
                   style={{ color: "#60936c" }}>
-                  Author & Storyteller
+                  Author & Minister
                 </p>
               </div>
             </Link>

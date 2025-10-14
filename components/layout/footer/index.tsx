@@ -87,11 +87,12 @@ export function Footer() {
                 className="flex items-center gap-3 mb-4">
                 <div>
                   <h2 className="text-2xl font-bold">Margaret Kuofie</h2>
-                  <p className="text-[var(--color-brand-muted)]">Author & Storyteller</p>
+                  <p className="text-[var(--color-brand-muted)]">Author & Minister</p>
                 </div>
               </Link>
               <p className="mb-6 leading-relaxed text-[var(--color-brand-accent)]">
-                Crafting stories that bridge cultures and touch hearts. Based in Ghana, writing for the world.
+                A minister of the Gospel who brings Scripture to life by connecting biblical truths with real-world
+                experiences and everyday situations.
               </p>
 
               {/* Social Links */}

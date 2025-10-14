@@ -38,11 +38,6 @@ export async function BlogPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
-        <section className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-balance text-brand-accent mb-4">My Blog</h1>
-          <p className="text-xl text-brand-muted text-pretty">Discover my stories, insights, and ideas.</p>
-        </section>
-
         {posts.length === 0 ? (
           <section className="text-center py-12">
             <div className="max-w-md mx-auto">
