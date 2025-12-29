@@ -10,13 +10,13 @@ const books = [
     slug: "to-vow-or-not-to-vow",
     title: "To Vow or Not to Vow",
     cover: "/vow.jpg",
-    description: "An insight into how we must keep our dreams private so we don't 'cast our fruit before it's time'.",
+    description: "A guide to nurturing unspoken aspirations and overcoming self-doubt.",
   },
   {
     slug: "behind-closed-doors",
     title: "Behind Closed Doors: Guarding Your Dreams",
     cover: "/behind.jpg",
-    description: "A guide to nurturing unspoken aspirations and overcoming self-doubt.",
+    description: "An insight into how we must keep our dreams private so we don't 'cast our fruit before it's time'.",
   },
 ]
 

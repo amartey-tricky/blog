@@ -10,17 +10,17 @@ const books = {
   "to-vow-or-not-to-vow": {
     title: "To Vow or Not to Vow",
     cover: "/vow.jpg",
-    description: "An insight into how we must keep our dreams private so we don't 'cast our fruit before it's time'.",
+    description: "The topic of vows is not very well understood and there are not many books that speak to this topic. Questions arise about whether Christians need to make vows.",
     details:
-      "This book blends research, personal anecdotes, and Biblical insights into whether it is necessary to make vows",
+      "The topic of vows is not very well understood and there are not many books that speak to this topic. Questions arise about whether Christians need to make vows. Looking at Biblical examples, there are arguments both for and against making vows. The importance is rather in fulfilling the vows that are made. With examples from the lives of Biblical greats such as Hannah, Ruth, David, Jephthah, Joshua, Jacob and Saul, this unique insight into the topic will be an eye-opener and help to answer many questions.",
     buyLink: "https://www.amazon.com/Vow-Not-Knowing-Implications-Vows/dp/1460007786/",
   },
   "behind-closed-doors": {
     title: "Behind Closed Doors: Guarding Your Dreams",
     cover: "/behind.jpg",
-    description: "A guide to nurturing unspoken aspirations and overcoming self-doubt.",
+    description: "Have you had a dream/inspiration/ revelation that you are waiting to see come to manifestation? Did you inform anyone about it? Your friends?",
     details:
-      "Margaret's latest work explores the fact that we must guard our dreams and aspirations private and watch them manifest and 'announce themselves'.",
+      "Have you had a dream/inspiration/ revelation that you are waiting to see come to manifestation? Did you inform anyone about it? Your friends? What about your family? Did God ask you to share it? Could the delay be because you broadcast it prematurely? Oftentimes such dreams are best kept private and the manifestation made public afterwards. This book is an insight into how we must keep most of our dreams private so that we do not 'cast our fruit before its time.'",
     buyLink: "https://www.amazon.com/Behind-Closed-Doors-Guarding-Dreams-ebook/dp/B0CKWH6RCC/",
   },
 }
