@@ -45,7 +45,6 @@ export function Footer() {
       { name: "About Me", href: "/about" },
       { name: "My Books", href: "/books" },
       { name: "Blog Posts", href: "/blog" },
-      { name: "Speaking Events", href: "/speaking" },
     ],
     Connect: [
       { name: "Contact", href: "/contact" },
