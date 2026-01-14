@@ -3,7 +3,7 @@
 import { motion } from "motion/react"
 import Image from "next/image"
 import Link from "next/link"
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import {
   FaArrowRight,
   FaAward,
@@ -93,7 +93,8 @@ export default function HomePage() {
       slug: "to-vow-or-not-to-vow",
       title: "To Vow or Not to Vow",
       cover: "/vow.jpg",
-      description: "Ensuring you are not making vows you cannot keep.",
+      description:
+        "Exploring the topic of whether making vows in the current day is Biblical. The importance is rather in fulfilling the vows that are made.",
     },
     {
       slug: "behind-closed-doors",

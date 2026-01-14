@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowUp, Facebook, Heart, Instagram, Linkedin, Twitter } from "lucide-react"
+import { ArrowUp, Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 import { motion } from "motion/react"
 import Link from "next/link"
 import type React from "react"
@@ -137,14 +137,14 @@ export function Footer() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-[var(--color-brand-muted)] text-sm">
               <span>© {new Date().getFullYear()} Margaret Kuofie. All rights reserved.</span>
-              <div className="flex items-center gap-2">
-                <span>Made with</span>
-                <Heart
-                  className="text-red-500 fill-current"
-                  size={16}
-                />
-                <span>in Ghana</span>
-              </div>
+              {/* <div className="flex items-center gap-2"> */}
+              {/*   <span>Made with</span> */}
+              {/*   <Heart */}
+              {/*     className="text-red-500 fill-current" */}
+              {/*     size={16} */}
+              {/*   /> */}
+              {/*   <span>in Ghana</span> */}
+              {/* </div> */}
             </div>
           </div>
         </div>

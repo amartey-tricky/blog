@@ -32,7 +32,7 @@ export function BooksPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Books by Margaret Kuofie</h1>
           <p className="text-lg md:text-xl mb-8">
-            Explore stories that blend clinical insight, cultural reflection, and personal growth.
+            Explore books that delve into how scripture can be applied for personal growth in this current day.
           </p>
         </div>
       </motion.section>

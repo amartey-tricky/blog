@@ -15,7 +15,7 @@ export function AboutPage() {
         transition={{ duration: 1 }}>
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">Margaret E. Kuofie</h1>
-          <p className="text-xl mb-8">Author | Clinical Research Professional | Storyteller</p>
+          <p className="text-xl mb-8">Author | Clinical Research Professional | Medical Laboratory Technologist</p>
           <motion.a
             href="/contact"
             whileHover={{ scale: 1.05 }}

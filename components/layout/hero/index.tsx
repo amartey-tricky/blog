@@ -176,8 +176,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-lg leading-relaxed max-w-2xl text-pretty"
               style={{ color: brandColors.text }}>
-              A minister of the Gospel who bridges faith and real life—exploring identity, resilience, and the beauty of
-              grace where divine truth meets human experience.
+              A minister of the Gospel who bridges faith and real life.
             </motion.p>
 
             <motion.div
@@ -310,7 +309,7 @@ export default function Hero() {
                     <p
                       className="text-sm"
                       style={{ color: brandColors.muted }}>
-                      "Stories of resilience that bridge cultures and generations"
+                      "To Vow or Not To Vow"
                     </p>
                   </div>
 
