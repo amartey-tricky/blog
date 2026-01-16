@@ -10,7 +10,8 @@ const books = [
     slug: "to-vow-or-not-to-vow",
     title: "To Vow or Not to Vow",
     cover: "/vow.jpg",
-    description: "A guide to nurturing unspoken aspirations and overcoming self-doubt.",
+    description:
+      "Exploring the topic of whether making vows in the current day is Biblical. The importance is rather in fulfilling the vows that are made.",
   },
   {
     slug: "behind-closed-doors",

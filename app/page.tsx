@@ -388,8 +388,8 @@ export default function HomePage() {
                     </div>
                   </div>
                   <blockquote className="text-[var(--color-brand-muted)] italic">
-                    "Margaret's blend of scientific insight and storytelling transformed our event! Her ability to
-                    connect research with human experience is truly remarkable."
+                    "Margaret's blend of scientific insight and storytelling transformed our event! Her talks bridge the
+                    gap between scripture and real-world application."
                   </blockquote>
                 </div>
               </div>

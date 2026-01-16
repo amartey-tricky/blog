@@ -3,6 +3,7 @@
 import { ArrowRight, Award, BookOpen, Mic, Star, Users } from "lucide-react"
 import { motion, type Variants } from "motion/react"
 import Link from "next/link"
+import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
@@ -306,6 +307,12 @@ export default function Hero() {
                       style={{ color: brandColors.text }}>
                       Latest Release
                     </h3>
+                    <Image
+                      src="/vow.jpg"
+                      alt="To Vow or Not To Vow"
+                      width={100}
+                      height={300}
+                    />
                     <p
                       className="text-sm"
                       style={{ color: brandColors.muted }}>
