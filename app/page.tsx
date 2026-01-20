@@ -266,7 +266,7 @@ export default function HomePage() {
         transition={{ duration: 0.8 }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[var(--color-brand-text)] mb-4">Latest Stories</h2>
+            <h2 className="text-4xl font-bold text-[var(--color-brand-text)] mb-4">Latest Posts</h2>
             <p className="text-xl text-[var(--color-brand-muted)] max-w-3xl mx-auto">
               Reflections and lessons from my walk of faith.
             </p>
@@ -346,7 +346,7 @@ export default function HomePage() {
               <h2 className="text-4xl font-bold text-[var(--color-brand-text)] mb-6">Speaking Engagements</h2>
               <p className="text-lg text-[var(--color-brand-muted)] mb-6 leading-relaxed">
                 Margaret brings her unique perspective to audiences worldwide, combining scientific insight with
-                storytelling to inspire and educate. Her talks bridge the gap between research and real-world
+                storytelling to inspire and educate. Her talks bridge the gap between scripture and real-world
                 application.
               </p>
 
@@ -371,7 +371,7 @@ export default function HomePage() {
                     size={48}
                   />
                   <h3 className="text-2xl font-bold text-[var(--color-brand-text)] mb-2">Featured Talk</h3>
-                  <p className="text-[var(--color-brand-muted)]">"The Science of Storytelling"</p>
+                  {/* <p className="text-[var(--color-brand-muted)]">"The Science of Storytelling"</p> */}
                 </div>
 
                 <div className="bg-white rounded-lg p-6 shadow-sm">
@@ -388,8 +388,8 @@ export default function HomePage() {
                     </div>
                   </div>
                   <blockquote className="text-[var(--color-brand-muted)] italic">
-                    "Margaret's blend of scientific insight and storytelling transformed our event! Her talks bridge the
-                    gap between scripture and real-world application."
+                    "Margaret's blend of scientific insight and ministry transformed our event! Her talks bridge the gap
+                    between scripture and real-world application."
                   </blockquote>
                 </div>
               </div>
